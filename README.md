@@ -1,4 +1,4 @@
- 
+
 # MindSlate - AI-Powered Flashcard SaaS Application
 
 ## Overview
@@ -69,6 +69,29 @@ MindSlate is an AI-powered flashcard application designed to help students study
 │   ├── user.test.js         # Tests for user routes/services
 │   └── flashcard.test.js    # Tests for flashcard routes/services
 │
+├── /client               # Frontend application (React + TypeScript)
+│   ├── /public            # Publicly accessible files
+│   │   ├── index.html     # Main HTML file
+│   │   ├── favicon.ico    # Favicon
+│   │   └── manifest.json  # PWA manifest file
+│   │
+│   ├── /src               # Main source code
+│   │   ├── /assets        # Static assets (images, fonts, etc.)
+│   │   ├── /components    # Reusable React components
+│   │   ├── /hooks         # Custom React hooks
+│   │   ├── /pages         # Page components for each route
+│   │   ├── /context       # Context providers for global state management
+│   │   ├── /services      # API service functions
+│   │   ├── /styles        # Global and component-specific styles
+│   │   ├── /types         # TypeScript type definitions
+│   │   ├── /utils         # Utility functions and helpers
+│   │   ├── App.tsx        # Main application component
+│   │   ├── index.tsx      # Entry point for the React app
+│   │   └── react-app-env.d.ts # TypeScript environment definitions
+│   │
+│   ├── tsconfig.json      # TypeScript configuration file
+│   └── package.json       # Frontend dependencies and scripts
+│
 ├── .env                  # Environment variables file
 ├── .gitignore            # Files and directories ignored by git
 ├── package.json          # Project metadata and dependencies
@@ -110,6 +133,24 @@ MindSlate is an AI-powered flashcard application designed to help students study
    npm start
    ```
    The application will start on `http://localhost:5000`.
+
+## Frontend Setup
+
+1. **Navigate to the frontend directory:**
+   ```bash
+   cd client
+   ```
+
+2. **Install frontend dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the frontend application:**
+   ```bash
+   npm start
+   ```
+   The frontend will start on `http://localhost:3000`.
 
 ## Future Versions
 
