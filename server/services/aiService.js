@@ -1,0 +1,1 @@
+// Integrates with AI services for flashcard generation

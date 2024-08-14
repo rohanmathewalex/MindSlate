@@ -1,0 +1,1 @@
+// Simplifies async/await error handling
