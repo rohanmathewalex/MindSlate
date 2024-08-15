@@ -1,4 +1,8 @@
-// server/server.js
+// Suppress warnings in production
+if (process.env.NODE_ENV === 'production') {
+    process.env.NODE_NO_WARNINGS = '1';
+}
+
 const express = require('express');
 const connectDB = require('./config/db');
 const errorHandler = require('./middlewares/errorHandler');
