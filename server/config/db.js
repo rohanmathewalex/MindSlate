@@ -1,21 +1,18 @@
-const mongoose = require('mongoose');
-const config = require('./config');
-const logger = require('../utils/logger');
+import mongoose from 'mongoose';
+import { config } from './config.js';
+import logger from '../utils/logger.js';
 
 const connectDB = async () => {
     try {
         await mongoose.connect(config.mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            useCreateIndex: true,
         });
-        // Log a generic success message without revealing the connection string
         logger.info('MongoDB Connected');
     } catch (error) {
-        // Log an error message without revealing the connection string
         logger.error('Error connecting to MongoDB');
-        process.exit(1);
+        process.exit(1); // Exit process with failure
     }
 };
 
-module.exports = connectDB;
+export default connectDB; // Use ES module default export
