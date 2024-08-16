@@ -1,14 +1,14 @@
 // Suppress warnings in production
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'development') {
     process.env.NODE_NO_WARNINGS = '1';
 }
 
-const express = require('express');
-const connectDB = require('./config/db');
-const errorHandler = require('./middlewares/errorHandler');
-const authRoutes = require('./routes/authRoutes');
-const logger = require('./utils/logger');
-const config = require('./config/config');
+import express from 'express';
+import connectDB from './config/db.js';  // Default import
+import errorHandler from './middlewares/errorHandler.js';  // Use import for errorHandler
+import authRoutes from './routes/authRoutes.js';  // Use import for authRoutes
+import logger from './utils/logger.js';
+import { config } from './config/config.js';  // Named import for config
 
 const app = express();
 
@@ -29,3 +29,6 @@ const PORT = config.port;
 app.listen(PORT, () => {
     logger.info(`Server running in ${config.nodeEnv} mode on port ${PORT}`);
 });
+
+// Export the app for testing
+export { app };

@@ -1,8 +1,8 @@
 // Rate limiting to prevent abuse
 // server/middlewares/authMiddleware.js
-const jwt = require('jsonwebtoken');
-const config = require('../config/config');
-const logger = require('../utils/logger');
+import jwt from 'jsonwebtoken';
+import { config } from '../config/config.js';
+import logger from '../utils/logger.js';
 
 const authMiddleware = (req, res, next) => {
     const token = req.header('Authorization').replace('Bearer ', '');
@@ -21,4 +21,4 @@ const authMiddleware = (req, res, next) => {
     }
 };
 
-module.exports = authMiddleware;
+export default authMiddleware; 

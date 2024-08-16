@@ -1,11 +1,14 @@
 // User Data Schema
-const mongoose = require('mongoose');
+
+import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    subscription: { type: String, enum:['free', 'paid', 'premium'], default:'free' },
+    subscription: { type: String, enum: ['free', 'paid', 'premium'], default: 'free' },
     date: { type: Date, default: Date.now }
 });
-module.exports = mongoose.model('User', UserSchema);
+
+// Export the model using ES module syntax
+export default mongoose.model('User', UserSchema);

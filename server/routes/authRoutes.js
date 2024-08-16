@@ -1,7 +1,7 @@
-const express = require('express');
-const { registerUser, loginUser, updateUserProfile, getAllUsers } = require('../controllers/authController');  // Ensure proper imports
-const { check } = require('express-validator');
-const authMiddleware = require('../middlewares/authMiddleware');
+import express from 'express';
+import { registerUser, loginUser, updateUserProfile, getAllUsers } from '../controllers/authController.js';  // Use proper ES module imports
+import { check } from 'express-validator';
+import authMiddleware from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
@@ -39,4 +39,4 @@ router.post(
 router.put('/profile', authMiddleware, updateUserProfile);
 router.get('/users', authMiddleware, getAllUsers);
 
-module.exports = router;
+export default router; 

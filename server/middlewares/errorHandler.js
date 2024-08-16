@@ -1,6 +1,4 @@
-// Handles application errors
-// server/middlewares/errorHandler.js
-const logger = require('../utils/logger');
+import logger from '../utils/logger.js';  // Convert require to import
 
 const errorHandler = (err, req, res, next) => {
     logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
@@ -10,4 +8,4 @@ const errorHandler = (err, req, res, next) => {
     });
 };
 
-module.exports = errorHandler;
+export default errorHandler;  // Convert module.exports to export default
